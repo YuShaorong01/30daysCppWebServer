@@ -21,7 +21,7 @@ private:
     std::condition_variable cv;
     bool stop;
 public:
-    ThreadPool(int size = 10);  // 默认size最好设置为std::thread::hardware_concurrency()
+    ThreadPool(int size = 10);  // 默认size最好设置为std::thread::hardware_concurrency()，获取硬件支持并发数
     ~ThreadPool();
     void add(std::function<void()>);
 };
